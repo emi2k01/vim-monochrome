@@ -14,7 +14,7 @@ endif
 let g:colors_name = 'monochrome'
 
 let s:white  = ['White', 15]
-let s:black  = ['#0e1111', 16]
+let s:black  = ['#10121a', 16]
 let s:bgray  = ['#181818', 233]
 let s:lgray  = ['LightGray', 255]
 let s:cgray  = ['#737373', 243]
@@ -53,7 +53,7 @@ function! s:hi(...)
         call add(cmd, 'ctermfg='.fg[1])
     endif
 
-    if bg != s:default_lst && bg != s:default_bg
+    if bg != s:default_lst
         call add(cmd, 'guibg='.bg[0])
         call add(cmd, 'ctermbg='.bg[1])
     endif
@@ -109,7 +109,7 @@ call s:hi('PmenuSel', s:sblue, s:white)
 call s:hi('Todo', s:black, s:yellow, s:bold)
 
 " Signs.
-call s:hi('SignColumn')
+call s:hi('SignColumn', s:white)
 
 "
 " --- Programming languages ----------------------------------------------------
